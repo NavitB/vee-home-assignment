@@ -1,7 +1,6 @@
 import { Document } from 'mongoose';
 
 export interface IGrant extends Document {
-  id: number;
   name: string;
   foundation:string;
   location: string;
