@@ -34,7 +34,6 @@ type User {
   }
 
   type Query {
-    user(username: String!): User
     grantsByStatus(userId: ID!, status: Status!): [Grant!]!
   }
 

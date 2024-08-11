@@ -8,20 +8,17 @@ import UserGrant from "./models/userGrant";
 import mongoose from "mongoose";
 
 
-// const userId = 'your_user_id_here';
 
 export const resolvers = {
   grantsByStatus: async ({ userId, status }: { userId: string, status: string }) => {
     console.log(`Fetching grants for userId: ${userId} with status: ${status}`);
     try {
-      // Populate the 'grant' field to get full grant details
       const userGrants = await UserGrant.find({ user: userId, status }).populate('grant');
       
       console.log(`Found ${userGrants.length} grants with status: ${status}`);
       
-      // Ensure 'grant' is fully populated and not just an ObjectId
       return userGrants.map(ug => {
-        const grant = ug.grant as any; // TypeScript trick to assert the correct type
+        const grant = ug.grant as any;
         return {
           id: grant._id,
           name: grant.name,
@@ -44,19 +41,16 @@ export const resolvers = {
       throw new Error('Invalid status');
     }
 
-    // Find the user-grant connection or create a new one
     let userGrant = await UserGrant.findOne({ user: userId, grant: grantId });
     if (!userGrant) {
       userGrant = new UserGrant({ user: userId, grant: new mongoose.Types.ObjectId(grantId) });
     }
 
-    // Update status, feedback, and matchDate
     userGrant.status = status;
     userGrant.feedback = feedback;
-    userGrant.matchDate = new Date(); // Set matchDate to current date
+    userGrant.matchDate = new Date();
     await userGrant.save();
 
-    // Return the updated grant
     return Grant.findById(grantId);
   },
 
