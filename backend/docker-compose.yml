@@ -11,11 +11,21 @@ services:
 
   backend:
     build: .
-    container_name: grants-backend
+    container_name: grants-dashboard-backend
     ports:
       - "4000:4000"
     environment:
       PORT: 4000
-      MONGO_URI: mongodb://root:example@mongodb:27017/grantsDashboard
+      MONGO_URI: mongodb://root:example@mongodb:27017/grantsDashboard?authSource=admin
     depends_on:
       - mongodb
+
+  fake-data-insert:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["npx", "ts-node", "src/scripts/insertFakeData.ts"]
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://root:example@mongodb:27017/grantsDashboard?authSource=admin
