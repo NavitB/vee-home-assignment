@@ -5,7 +5,7 @@ const UserGrantSchema: Schema = new Schema({
     user: { type: Schema.Types.ObjectId, ref: 'User', required: true },
     grant: { type: Schema.Types.ObjectId, ref: 'Grant', required: true },
     feedback: { type: String, default: '' },
-    status: { type: String, default: 'new' },
+    status: { type: String, default: 'NEW' },
     matchDate: {type: Date}
   });
 
