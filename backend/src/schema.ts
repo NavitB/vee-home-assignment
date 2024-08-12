@@ -32,9 +32,15 @@ type User {
     status: Status!
     matchDate: String
   }
+  type GrantWithUserGrant {
+      grant: Grant!
+      feedback: String
+      status: Status!
+      matchDate: String
+}
 
   type Query {
-    grantsByStatus(userId: ID!, status: Status!): [Grant!]!
+    grantsByStatus(userId: ID!, status: Status!): [GrantWithUserGrant!]!
   }
 
   type Mutation {

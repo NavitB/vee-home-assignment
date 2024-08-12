@@ -20,6 +20,7 @@ export const resolvers = {
       return userGrants.map(ug => {
         const grant = ug.grant as any;
         return {
+          grant: {
           id: grant._id,
           name: grant.name,
           foundation: grant.foundation,
@@ -28,6 +29,9 @@ export const resolvers = {
           deadline: grant.deadline,
           area: grant.area,
           logo: grant.logo,
+          },
+          status: ug.status,
+          matchDate: ug.matchDate || null
         };
       });
     } catch (error) {
