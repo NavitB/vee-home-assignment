@@ -1,30 +1,30 @@
-s# Grants Dashboard
+# Grants Dashboard - Vee Home Assignment
 
 The Grants Dashboard is a web application that allows users to view, manage, and interact with grant opportunities. It consists of a backend server providing a GraphQL API and a frontend built with React for user interaction.
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Technologies](#technologies)
-- [Architecture](#architecture)
-- [Features](#features)
-- [Prerequisites](#prerequisites)
-- [Getting Started](#getting-started)
-  - [Clone the Repository](#clone-the-repository)
-- [Backend Setup](#backend-setup)
-  - [Environment Variables](#environment-variables)
-  - [Running with Docker](#running-with-docker)
-  - [GraphQL API](#graphql-api)
-- [Frontend Setup](#frontend-setup)
-  - [Environment Variables](#environment-variables-1)
-  - [Running Locally](#running-locally)
-- [GraphQL API](#graphql-api-1)
-  - [Key Queries and Mutations](#key-queries-and-mutations)
-  - [Example Queries](#example-queries)
-    - [Query Grants by Status](#query-grants-by-status)
-- [Database Schema](#database-schema)
-  - [MongoDB Collections](#mongodb-collections)
-- [Backend Testing](#backend-testing)
+- [Grants Dashboard - Vee Home Assignment](#grants-dashboard---vee-home-assignment)
+  - [Table of Contents](#table-of-contents)
+  - [Technologies](#technologies)
+  - [Architecture](#architecture)
+  - [Features](#features)
+  - [Prerequisites](#prerequisites)
+  - [Getting Started](#getting-started)
+    - [Clone the Repository](#clone-the-repository)
+  - [Backend Setup](#backend-setup)
+    - [Environment Variables](#environment-variables)
+    - [Running with Docker](#running-with-docker)
+    - [GraphQL API](#graphql-api)
+  - [Frontend Setup](#frontend-setup)
+    - [Running Locally](#running-locally)
+  - [GraphQL API](#graphql-api-1)
+    - [Key Queries and Mutations](#key-queries-and-mutations)
+    - [Example Queries](#example-queries)
+      - [Query Grants by Status](#query-grants-by-status)
+  - [Database Schema](#database-schema)
+    - [MongoDB Collections](#mongodb-collections)
+  - [Backend Testing](#backend-testing)
 
 ## Technologies
 
