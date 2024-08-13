@@ -9,7 +9,6 @@ import {
     sectionHeaderStyle,
     modalStyle,
     modalBoxStyle,
-    formStyle,
     feedbackTextStyle,
     submitButtonStyle
   } from '../styles/dashboardStyles'; 
@@ -100,7 +99,6 @@ const Dashboard: React.FC<DashboardProps> = ({ userId }) => {
     <div style={dashboardContainerStyle}>
       <h1 style={sectionHeaderStyle}>New Matches</h1>
       <NewMatches grants={newGrantsData?.grantsByStatus || []} onLike={handleLike} onDislike={handleDislike} />
-
       <h1 style={sectionHeaderStyle}>All Grant Opportunities</h1>
       <GrantsTable grants={likedGrantsData?.grantsByStatus || []} />
 
