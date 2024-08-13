@@ -1,26 +1,29 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Login from './components/Login';
+import Dashboard from './components/Dashboard';
 
-function App() {
+const App: React.FC = () => {
+  const [username, setUsername] = useState<string | null>(null);
+  const [userId, setUserId] = useState<string | null>(null);
+
+  const handleLogin = (userData: { username: string; id: string }) => {
+    if (userData && userData.username && userData.id) {
+      setUsername(userData.username);
+      setUserId(userData.id);
+    } else {
+      console.error('Invalid login data:', userData);
+    }
+  };
+
+  if (!username || !userId) {
+    return <Login onLogin={handleLogin} />;
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Dashboard userId={userId} />
     </div>
   );
-}
+};
 
 export default App;
