@@ -42,7 +42,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
       console.log('Login response:', response);
 
       if (response && response.data && response.data.login) {
-        onLogin(response.data.login); // Pass the entire login data
+        onLogin(response.data.login);
       } else {
         throw new Error('Login response is null or invalid');
       }
