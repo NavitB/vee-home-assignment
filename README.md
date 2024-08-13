@@ -101,14 +101,6 @@ MONGO_URI=mongodb://root:example@mongodb:27017/grantsDashboard?authSource=admin
 
 ## Frontend Setup
 
-### Environment Variables
-
-Create a `.env` file in the `frontend` directory and add the following:
-
-```plaintext
-REACT_APP_GRAPHQL_ENDPOINT=http://localhost:4000/graphql
-```
-
 ### Running Locally
 
 1. **Ensure Node.js is installed**.
