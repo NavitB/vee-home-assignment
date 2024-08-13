@@ -47,7 +47,7 @@ The Grants Dashboard is a web application that allows users to view, manage, and
 
 ## Prerequisites
 
-- [Node.js](https://nodejs.org/) (v14 or later)
+- [Node.js](https://nodejs.org/) (v16 or later)
 - [Docker](https://www.docker.com/get-started)
 
 ## Getting Started
