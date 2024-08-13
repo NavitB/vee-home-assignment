@@ -24,13 +24,15 @@ app.use('/graphql', graphqlHTTP({
 const PORT = process.env.PORT || 4000;
 const MONGO_URI = process.env.MONGO_URI || 'mongodb://root:example@localhost:27017/grantsDashboard';
 
-mongoose.connect(MONGO_URI, {
-  dbName: 'grantsDashboard',
-}).then(() => {
-  app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}/graphql`);
-  });
-}).catch(err => {
-  console.error('Connection error', err.message);
-});
+if (process.env.NODE_ENV !== 'test') {
+    mongoose.connect(MONGO_URI, {
+      dbName: 'grantsDashboard',
+    }).then(() => {
+      app.listen(PORT, () => {
+        console.log(`Server is running on http://localhost:${PORT}/graphql`);
+      });
+    }).catch(err => {
+      console.error('Connection error', err.message);
+    });
+}
 

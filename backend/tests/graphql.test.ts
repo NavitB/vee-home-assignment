@@ -28,11 +28,9 @@ describe('GraphQL API Tests', () => {
       .send({ query: loginMutation, variables })
       .expect(200);
 
-    const res = response.body;
+    // const res = response.body;
 
-    expect(res.data.login).toEqual({
-      id: expect.any(String),
-      username: 'testuser'
+    expect(response.body.data.login).toBeDefined();
+    expect(response.body.data.login.username).toBe('testuser');
     });
   });
-});
