@@ -18,6 +18,7 @@ The Grants Dashboard is a web application that allows users to view, manage, and
     - [GraphQL API](#graphql-api)
   - [Frontend Setup](#frontend-setup)
     - [Running Locally](#running-locally)
+    - [**Login Instructions:**](#login-instructions)
   - [GraphQL API](#graphql-api-1)
     - [Key Queries and Mutations](#key-queries-and-mutations)
     - [Example Queries](#example-queries)
@@ -125,7 +126,8 @@ MONGO_URI=mongodb://root:example@mongodb:27017/grantsDashboard?authSource=admin
 
    The frontend application will open in your default web browser and be accessible at `http://localhost:3000`.
 
-5. **Login Instructions:** To access the dashboard, enter the username `testuser` on the login page. This is a pre-populated user created by the fake data script.
+  ### **Login Instructions:**
+   To access the dashboard, enter the username `testuser` on the login page. This is a pre-populated user created by the fake data script.
 
 ## GraphQL API
 
@@ -168,10 +170,11 @@ query {
 
 ## Backend Testing
 
-- **Run Tests**: Ensure all backend tests pass before deployment.
+- **Run Tests**:
 
 ```bash
 cd backend
+npm install
 npm test
 ```
 
