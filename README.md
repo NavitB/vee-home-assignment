@@ -105,20 +105,20 @@ MONGO_URI=mongodb://root:example@mongodb:27017/grantsDashboard?authSource=admin
 ### Running Locally
 
 1. **Ensure Node.js is installed**.
-
-2. **Navigate to the frontend directory**:
+2. **Open a new terminal**
+3. **Navigate to the frontend directory**:
 
    ```bash
    cd frontend
    ```
 
-3. **Install the dependencies**:
+4. **Install the dependencies**:
 
    ```bash
    npm install
    ```
 
-4. **Start the React application**:
+5. **Start the React application**:
 
    ```bash
    npm start
