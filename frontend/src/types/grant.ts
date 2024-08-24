@@ -12,5 +12,5 @@ export interface Grant {
 export interface GrantWithUserGrant {
   grant: Grant;
   status: 'NEW' | 'LIKED' | 'DISLIKED';
-  matchDate?: string; // Optional since it's not present in the example data
+  matchDate?: string;
 }
