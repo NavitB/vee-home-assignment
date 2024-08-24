@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useQuery, gql, useMutation } from '@apollo/client';
 import GrantsTable from './GrantsTable';
 import NewMatches from './NewMatches';
-// import Modal from 'react-modal';
 import { Modal, Box, Typography, Button, TextField } from '@mui/material';
 import {
     dashboardContainerStyle,
@@ -13,7 +12,6 @@ import {
     submitButtonStyle
   } from '../styles/dashboardStyles'; 
 
-// Modal.setAppElement('#root');
 
 const GET_GRANTS_BY_STATUS = gql`
   query GetGrantsByStatus($userId: ID!, $status: Status!) {
